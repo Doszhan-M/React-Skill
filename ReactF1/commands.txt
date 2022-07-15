@@ -1,0 +1,9 @@
+npm i webpack webpack-cli
+npm i @babel/core @babel/preset-env @babel/preset-react babel-loader
+npm i react react-dom
+npm i style-loader css-loader
+npm i html-webpack-plugin
+npm i webpack-dev-server
+npm i axios
+npm install react-bootstrap@next bootstrap@5.1.1
+npm i prop-types --save-dev

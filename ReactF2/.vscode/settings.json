@@ -1,0 +1,23 @@
+{ 
+  // - - - Настройки liveSassCompile - - - - - - - - 
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "/css"
+    },
+    {
+      "format": "compressed",
+      "extensionName": ".min.css",
+      "savePath": "/css"
+    },
+  ],
+
+  "editor.snippetSuggestions": "top",
+  
+  // - - - Настройки cSpell - - - - - - - - - - - - -
+  "cSpell.language": "en,ru",
+  "cSpell.ignoreWords": [
+    "Предоплаченные",
+  ],
+}
