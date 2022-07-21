@@ -2,4 +2,8 @@ npm install @babel/core @babel/preset-env @babel/preset-react axios babel-loader
 
 https://api.openweathermap.org/data/2.5/onecall?lat=43.25&lon=76.95&appid=ab175a054c6d3bf1f1ae8fb08204d3ff&units=metric&exclude=minutely
 
+https://api.openweathermap.org/geo/1.0/direct?limit=5&appid=ab175a054c6d3bf1f1ae8fb08204d3ff&q=almaty
 
+https://www.amcharts.com/free-animated-svg-weather-icons/
+
+https://bas.dev/work/meteocons
