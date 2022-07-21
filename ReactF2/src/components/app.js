@@ -6,8 +6,6 @@ import Main from "./main"
 
 
 function App() {
-    const buttonName = "buttonHeader";
-
     return (
         <React.Fragment>
             <Header />
