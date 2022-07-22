@@ -2,14 +2,9 @@
   // - - - Настройки liveSassCompile - - - - - - - - 
   "liveSassCompile.settings.formats": [
     {
-      "format": "expanded",
-      "extensionName": ".css",
-      "savePath": "/css"
-    },
-    {
       "format": "compressed",
       "extensionName": ".min.css",
-      "savePath": "/css"
+      "savePath": "/src/styles/css"
     },
   ],
 

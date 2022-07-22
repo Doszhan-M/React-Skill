@@ -1,12 +1,12 @@
 import React, { Component, useState } from "react";
-import "../styles/header.css"
+import "../styles/css/header.min.css"
 
 
 function Header() {
 
     return (
         <header>
-            <h1>Weather App</h1>
+            <p>Weather App</p>
         </header>
     )
 }
