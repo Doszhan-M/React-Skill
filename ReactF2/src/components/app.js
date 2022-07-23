@@ -8,7 +8,7 @@ import Main from "./main"
 function App() {
     return (
         <React.Fragment>
-            <Header />
+            {/* <Header /> */}
             <Main />
         </React.Fragment>
 

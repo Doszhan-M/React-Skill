@@ -4,4 +4,15 @@ main {
     justify-content: center;
     align-items: center;
     width: 100%;  
+
+    .preview__video {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        object-fit: fill;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+    }
 }

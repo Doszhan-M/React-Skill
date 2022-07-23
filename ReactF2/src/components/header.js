@@ -6,6 +6,7 @@ function Header() {
 
     return (
         <header>
+
             <p>Weather App</p>
         </header>
     )
