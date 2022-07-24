@@ -1,0 +1,38 @@
+.geo {
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+
+    .location {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .city {
+            margin: 0 0 -3%;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: 800;
+            color: aliceblue;
+            font-size: 38px;
+            text-transform: uppercase;
+        }
+        .country{
+            margin: 0 0;
+            font-family: Barlow,sans-serif;
+            color: aliceblue;
+            font-size: 18px;
+        }
+        .dateline {
+            margin: 0 0;
+            font-family: Frank Ruhl Libre,serif;
+            color: aliceblue;
+            font-size: 14px;
+        }
+    }
+
+    Form {
+        display: flex;
+        flex-direction: column;
+        justify-content:flex-end;
+    }
+
+}

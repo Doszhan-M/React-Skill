@@ -1,14 +1,12 @@
-import React, { Component } from "react";
-// import "../styles/app.css";
+import React from "react";
 
-import Header from "./header"
 import Main from "./main"
+import Geo from "./geo"
 
 
 function App() {
     return (
         <React.Fragment>
-            {/* <Header /> */}
             <Main />
         </React.Fragment>
 
