@@ -1,35 +1,64 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios"
 import "../styles/css/geo.min.css";
-import Form from 'react-bootstrap/Form';
 
-function Geo() {
+function Geo(props) {
 
-    let [latitude, setPosition] = useState(null);
+    const countries = require('alpha2-countries')
+    let [city, setCity] = useState('------')
+    let [country, setCountry] = useState('------')
+    let [dateline, setDateline] = useState('------')
 
-    const handleClick = () => {
-        navigator.geolocation.getCurrentPosition(function (position) {
-            let lat = position.coords.latitude;
-            console.log(lat)
-            setPosition(lat)
-        })
+    function setDateTime() {
+        let date = String(new Date());
+        let to = date.search('GMT');
+        let timeline = date.substring(0, to - 4);
+        setDateline(timeline)
     }
-    useEffect(() => handleClick(), [])
+    setInterval(setDateTime, 30000)
+
+
+    const currentPosition = () => {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                let latitude = position.coords.latitude;
+                let longitude = position.coords.longitude;
+                props.setLatitude(latitude)
+                props.setLongitude(longitude)
+                let url = `http://api.openweathermap.org/geo/1.0/reverse?limit=1&appid=${props.apiToken}&lat=${latitude}&lon=${longitude}`
+                axios.get(url).then(response => {
+                    setCity(response.data[0]['name'])
+                    setCountry(countries.resolveName(response.data[0]['country']))
+                    setDateTime()
+                });
+            })
+        } 
+    }
+    useEffect(() => currentPosition(), [])
+
+    
+    const searchCity = e => {
+        e.preventDefault();
+        let targetCity = e.target.value
+        let url = `https://api.openweathermap.org/geo/1.0/direct?limit=1&appid=${props.apiToken}&q=${targetCity}`
+        axios.get(url).then(response => {
+            setCity(response.data[0]['name'])
+            setCountry(countries.resolveName(response.data[0]['country']))
+            setDateTime()
+        });
+    }
 
     return (
         <div className="geo">
             <div className="location">
-                {/* <p id="demo">Latitude: {latitude}</p> */}
-                <p className="city">Almaty</p>
-                <p className="country">Kazakhstan</p>
-                <p className="dateline">Thursday, 12 May 2022 13:15</p>
+                <p className="city">{city}</p>
+                <p className="country">{country}</p>
+                <p className="dateline">{dateline}</p>
             </div>
-            <Form>
-                <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                    <Form.Control type="text" placeholder="Enter your location" />
-                </Form.Group>
-            </Form>
+            <div className="search_form" >
+                <input onChange={searchCity} placeholder="Enter your location"></input>
+            </div>
         </div>
-
     )
 }
 

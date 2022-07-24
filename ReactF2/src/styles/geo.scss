@@ -7,32 +7,60 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+
         .city {
             margin: 0 0 -3%;
-            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             font-weight: 800;
             color: aliceblue;
             font-size: 38px;
             text-transform: uppercase;
         }
-        .country{
+
+        .country {
             margin: 0 0;
-            font-family: Barlow,sans-serif;
+            font-family: Barlow, sans-serif;
             color: aliceblue;
             font-size: 18px;
         }
+
         .dateline {
             margin: 0 0;
-            font-family: Frank Ruhl Libre,serif;
+            font-family: Frank Ruhl Libre, serif;
             color: aliceblue;
-            font-size: 14px;
+            font-size: 16px;
         }
     }
 
-    Form {
+    .search_form {
         display: flex;
         flex-direction: column;
-        justify-content:flex-end;
+        justify-content: flex-end;
+        border-bottom: 1px solid #f5f5f5;
+
+        input {
+            border: 0;
+            background-color: transparent;
+            text-align: end;
+            color: white;
+            height: 50%;
+            font-family: Barlow, sans-serif;
+            font-size: 20px;
+            transition: all 1s ease-in-out;
+
+            &:focus {
+                outline-style: none;
+                box-shadow: none;
+                border-color: transparent;
+                color: white;
+                font-family: Barlow, sans-serif;
+                transition: all 1s ease-in-out;
+                font-size: 30px;
+            }
+
+
+        }
+
     }
 
 }
