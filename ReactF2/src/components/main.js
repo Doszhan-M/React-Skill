@@ -21,7 +21,7 @@ function Main() {
                 <source type="video/mp4" src={backgroundVideo} />
             </video>
             <Geo {...{ apiToken, setLatitude, setLongitude} } />
-            <Current {...{latitude, longitude}}/>
+            <Current {...{apiToken, latitude, longitude}}/>
         </main>
     )
 }

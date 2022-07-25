@@ -42,6 +42,8 @@ function Geo(props) {
         let targetCity = e.target.value
         let url = `https://api.openweathermap.org/geo/1.0/direct?limit=1&appid=${props.apiToken}&q=${targetCity}`
         axios.get(url).then(response => {
+            props.setLatitude(response.data[0]['lat'])
+            props.setLongitude(response.data[0]['lon'])
             setCity(response.data[0]['name'])
             setCountry(countries.resolveName(response.data[0]['country']))
             setDateTime()

@@ -46,7 +46,7 @@
             height: 50%;
             font-family: Barlow, sans-serif;
             font-size: 20px;
-            transition: all 1s ease-in-out;
+            transition: all .3s ease-in-out;
 
             &:focus {
                 outline-style: none;
@@ -54,7 +54,7 @@
                 border-color: transparent;
                 color: white;
                 font-family: Barlow, sans-serif;
-                transition: all 1s ease-in-out;
+                transition: all .3s ease-in-out;
                 font-size: 30px;
             }
 
