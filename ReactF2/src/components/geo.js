@@ -13,9 +13,13 @@ function Geo(props) {
         let date = String(new Date());
         let to = date.search('GMT');
         let timeline = date.substring(0, to - 4);
+        console.log(timeline)
         setDateline(timeline)
     }
-    setInterval(setDateTime, 30000)
+    useEffect(() => {
+        let intervalId = setInterval(setDateTime, 30000)
+        return (() => {clearInterval(intervalId)})
+    }, [])
 
 
     const currentPosition = () => {
