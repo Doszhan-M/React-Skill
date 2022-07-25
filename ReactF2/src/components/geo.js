@@ -13,7 +13,6 @@ function Geo(props) {
         let date = String(new Date());
         let to = date.search('GMT');
         let timeline = date.substring(0, to - 4);
-        console.log(timeline)
         setDateline(timeline)
     }
     useEffect(() => {

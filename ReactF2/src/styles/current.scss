@@ -15,7 +15,7 @@
             width: 50%;
             height: 100%;
             justify-content: center;
-            scale: 5;
+            transform: scale(1.4);
         }
 
         .temperature {
@@ -67,10 +67,46 @@
         justify-content: flex-end;
 
         .spec_card {
+            padding: 1% 5%;
+            display: flex;
+            justify-content: space-between;
             width: 90%;
             height: 100%;
-            background: radial-gradient(circle, rgba(69,1,2,1) 0%, rgba(84,2,3,1) 40%, rgba(134,15,237,1) 100%) ;
+            background: radial-gradient(circle, rgba(69, 1, 2, 1) 0%, rgba(84, 2, 3, 1) 40%, rgba(134, 15, 237, 1) 100%);
             border-radius: 15px;
+            color: aliceblue;
+            font-family: Frank Ruhl Libre, serif;
+            font-size: 18px;
+            font-weight: 550;
+
+            .card_left {
+                display: flex;
+                width: 50%;
+                height: 100%;
+                flex-direction: column;
+                margin-left: 0%;
+            }
+
+            .card_right {
+                display: flex;
+                width: 50%;
+                height: 100%;
+                flex-direction: column;
+                margin-left: 5%;
+            }
+
+            .spec_key {
+                display: flex;
+                width: 100%;
+                height: 33.3%;
+                justify-content: space-between;
+
+                & :nth-child(1) {
+                    color: aquamarine;
+                }
+
+            }
+
 
         }
     }
