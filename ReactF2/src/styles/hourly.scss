@@ -1,0 +1,23 @@
+.hourly {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    height: 150px;
+    margin: 0;
+
+    .hourly_title {
+        display: flex;
+        width: 100%;
+        height: 25px;
+        background-color: rgb(18, 20, 20);
+        margin: 0;
+}
+
+    .hourly_items {
+        display: flex;
+        width: 100%;
+        height: 120px;
+        margin: 0;
+        background-color: rgb(24, 81, 187);
+    }
+}

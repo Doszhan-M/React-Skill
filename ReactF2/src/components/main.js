@@ -3,6 +3,8 @@ import "../styles/css/main.min.css";
 
 import Geo from "./geo"
 import Current from "./current"
+import Hourly from "./hourly"
+import Daily from "./daily"
 
 import backgroundVideo from "../img/neon.mp4";
 import backgroundPoster from "../img/neon.png";
@@ -22,6 +24,8 @@ function Main() {
             </video>
             <Geo {...{ apiToken, setLatitude, setLongitude} } />
             <Current {...{apiToken, latitude, longitude}}/>
+            <Hourly />
+            <Daily />
         </main>
     )
 }
