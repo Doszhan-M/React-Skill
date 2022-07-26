@@ -1,19 +1,39 @@
+html{
+
+    width: 100%;
+    max-width: 100%;
+    overflow-x : hidden;
+    overflow-y : hidden;
+}
+
 main {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    width: 100%;  
-    padding: 75px 30px;
+    width: 100vw;
+    height: 100vh;
+    padding: 65px 30px;
+
+    .box {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        height: auto;
+        overflow:auto;
+    }
 
     .preview__video {
         display: block;
-        position: fixed;
+        position: absolute;
         top: 0;
         left: 0;
         object-fit: fill;
         width: 100vw;
         height: 100vh;
         z-index: -1;
+        transform: scaleY(1.05) scaleX(1.05)
     }
 }

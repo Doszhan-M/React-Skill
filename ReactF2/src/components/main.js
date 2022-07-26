@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "../styles/css/main.min.css";
 
 import Geo from "./geo"
@@ -22,10 +22,13 @@ function Main() {
             <video autoPlay muted loop preload="auto" poster={backgroundPoster} className="preview__video">
                 <source type="video/mp4" src={backgroundVideo} />
             </video>
-            <Geo {...{ apiToken, setLatitude, setLongitude} } />
-            <Current {...{apiToken, latitude, longitude}}/>
-            <Hourly />
-            <Daily />
+            <div className="box">
+                <Geo {...{ apiToken, setLatitude, setLongitude }} />
+                <Current {...{ apiToken, latitude, longitude }} />
+                <Hourly />
+                {/* <Daily /> */}
+            </div>
+
         </main>
     )
 }
