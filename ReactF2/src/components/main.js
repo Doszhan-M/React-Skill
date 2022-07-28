@@ -17,6 +17,7 @@ function Main() {
     let [latitude, setLatitude] = useState(null)
     let [longitude, setLongitude] = useState(null)
     let [weatherForecast, setWeatherForecast] = useState(null)
+    let [currentIndex, setCurrentIndex] = useState(0)
 
     return (
         <main>
@@ -25,8 +26,8 @@ function Main() {
             </video>
             <div className="box">
                 <Geo {...{ apiToken, setLatitude, setLongitude }} />
-                <Current {...{ apiToken, latitude, longitude, setWeatherForecast }} />
-                <Hourly {...{ weatherForecast }}/>
+                <Current {...{ apiToken, latitude, longitude, setWeatherForecast, currentIndex }} />
+                <Hourly {...{ weatherForecast, setCurrentIndex }}/>
                 <Daily {...{ weatherForecast }}/>
             </div>
 

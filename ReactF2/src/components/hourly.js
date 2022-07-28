@@ -22,12 +22,21 @@ function Hourly(props) {
         container.current.getElement().scrollTo(0, Math.random() * 10000);
     }, []);
 
+
+    const onClick = event => {
+        const parent = event.target.parentNode
+        if (parent.className === 'hourly_item') {
+            let index = parent.dataset.index
+            props.setCurrentIndex(index)
+        }
+    }
+
     return (
         <div className="hourly">
             <div className="hourly_title">Hourly</div>
             <div className="hourly_items_line">
                 <ScrollContainer className="container flex_container" ref={container}>
-                    {hourly.map(hour => <Hour key={hour.dt} hour={hour} />)}
+                    {hourly.map((hour, index) => <Hour key={hour.dt} {...{ hour, index, onClick }} />)}
                 </ScrollContainer>
             </div>
         </div>

@@ -7,10 +7,11 @@ import WeatherSvg from "./weather_svg"
 
 function Current(props) {
 
+    let [forecastData, setForecastData] = useState(null)
     let [temperature, setTemperature] = useState(null)
     let [feelsLike, setFeelsLike] = useState(null)
     let [sky, setSky] = useState(null)
-    let [humidity, setHumidity] = useState(null)
+    let [rain, setRain] = useState(null)
     let [wind_speed, setWindSpeed] = useState(null)
     let [wind_deg, setWindDeg] = useState(null)
     let [pressure, setPressure] = useState(null)
@@ -19,38 +20,56 @@ function Current(props) {
     let [iconId, setIconId] = useState(null)
     let [hour, setForecastTime] = useState(null)
 
+
+    function collectData(response, index) {
+        if (response) {
+
+            setForecastData(response)
+            props.setWeatherForecast(response.data)
+            let temp = String(response.data.hourly[index]['temp'])
+            setTemperature(temp.substring(0, 4))
+            setFeelsLike(response.data.hourly[index]['feels_like'])
+            setSky(response.data.hourly[index]['weather'][0]['description'])
+            setRain(response.data.hourly[index]['pop'] * 100)
+            setWindSpeed(response.data.hourly[index]['wind_speed'])
+            setWindDeg(response.data.hourly[index]['wind_deg'])
+            setPressure(response.data.hourly[index]['pressure'])
+            setDewPoint(response.data.hourly[index]['dew_point'])
+            setUvi(response.data.hourly[index]['uvi'])
+            setIconId(response.data.hourly[index]['weather'][0]['id'])
+            let unix_timestamp = response.data.hourly[index]['dt']
+            let forecastTime = new Date(unix_timestamp * 1000);
+            hour = forecastTime.getHours()
+            setForecastTime(hour);
+        }
+    }
+
+
     useEffect(
         () => {
             if (props.latitude || props.longitude) {
                 let url = `https://api.openweathermap.org/data/2.5/onecall?lat=${props.latitude}&lon=${props.longitude}&appid=${props.apiToken}&units=metric&exclude=minutely`
                 axios.get(url).then(response => {
-                    props.setWeatherForecast(response.data)
-                    let temp = String(response.data['current']['temp'])
-                    setTemperature(temp.substring(0, 4))
-                    setFeelsLike(response.data['current']['feels_like'])
-                    setSky(response.data['current']['weather'][0]['description'])
-                    setHumidity(response.data['current']['humidity'])
-                    setWindSpeed(response.data['current']['wind_speed'])
-                    setWindDeg(response.data['current']['wind_deg'])
-                    setPressure(response.data['current']['pressure'])
-                    setDewPoint(response.data['current']['dew_point'])
-                    setUvi(response.data['current']['uvi'])
-                    setIconId(response.data['current']['weather'][0]['id'])
-                    let unix_timestamp = response.data['current']['dt']
-                    let forecastTime = new Date(unix_timestamp * 1000);
-                    hour = forecastTime.getHours()
-                    setForecastTime(hour);
+                    collectData(response, props.currentIndex)
+
                 });
             }
         },
         [props.latitude, props.longitude],
     );
 
+    useEffect(
+        () => {
+            collectData(forecastData, props.currentIndex)
+        },
+        [props.currentIndex],
+    );
+
     return (
         <div className="current_weather">
             <div className="left_block">
                 <div className="weather_svg">
-                    <WeatherSvg {...{ iconId, hour} } />
+                    <WeatherSvg {...{ iconId, hour }} />
                 </div>
                 <div className="temperature">
                     <p className="temp">{temperature}°C</p>
@@ -62,7 +81,7 @@ function Current(props) {
                 <div className="specification">
                     <div className="spec_card">
                         <div className="card_left">
-                            <p className="spec_key"><span>Humidity</span><span>{humidity} %</span></p>
+                            <p className="spec_key"><span>Rain</span><span>{rain} %</span></p>
                             <p className="spec_key"><span>Wind speed</span><span>{wind_speed} m/s</span></p>
                             <p className="spec_key"><span>Wind degree</span><span>{wind_deg} °</span></p>
                         </div>
