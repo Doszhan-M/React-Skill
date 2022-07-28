@@ -1,9 +1,9 @@
-html{
+html {
 
     width: 100%;
     max-width: 100%;
-    overflow-x : hidden;
-    overflow-y : hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 main {
@@ -22,7 +22,14 @@ main {
         align-items: center;
         width: 100%;
         height: auto;
-        overflow:auto;
+        overflow: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+        }
     }
 
     .preview__video {

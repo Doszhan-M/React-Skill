@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     width: 85%;
-    height: 190px;
+    min-height: 180px;
     overflow: hidden;
 
     .hourly_title {
@@ -25,6 +25,7 @@
 
         .flex_container {
             display: flex;
+            min-width: 100%;
         }
     }
 
