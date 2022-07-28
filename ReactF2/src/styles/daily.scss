@@ -2,8 +2,7 @@
     display: flex;
     flex-direction: column;
     width: 85%;
-    margin-top: 5px;
-    // overflow:hidden;
+    margin-top: 7px;
 
     .daily_title {
         display: flex;
@@ -21,34 +20,5 @@
         display: flex;
         flex-direction: column;
         height: 100%;
-
-        .day {
-            // display: flex;
-            width: 100%;
-            min-height: 55px;
-            margin-top: 5px;
-            background-color: rgb(187, 24, 119);
-            border-radius: 15px;
-        }
-
-        .accordion-item {
-            border-radius: 15px;
-            margin-top: 7px;
-            background-color: rgb(187, 24, 119);
-        }
-
-        .accordion-button {
-            border-radius: 15px;
-            background-color: rgb(187, 24, 119) !important;
-        }
-
-        .day_invisible {
-            display: block;
-            width: 100%;
-            min-height: 55px;
-            margin-top: 5px;
-            background-color: transparent;
-            border-radius: 15px;
-        }
     }
 }

@@ -27,7 +27,7 @@ function Main() {
                 <Geo {...{ apiToken, setLatitude, setLongitude }} />
                 <Current {...{ apiToken, latitude, longitude, setWeatherForecast }} />
                 <Hourly {...{ weatherForecast }}/>
-                <Daily />
+                <Daily {...{ weatherForecast }}/>
             </div>
 
         </main>

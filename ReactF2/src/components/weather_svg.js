@@ -59,6 +59,7 @@ function WeatherSvg(props) {
     } else {
         icon_svg = iconStoreNight[props.iconId]
     }
+    
     return (
         <img src={icon_svg} alt="icon_svg" />
     )
