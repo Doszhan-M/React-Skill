@@ -27,6 +27,7 @@
     "react-bootstrap-accordion": "^1.0.0",
     "react-dom": "^18.2.0",
     "react-indiana-drag-scroll": "^2.2.0",
+    "react-switch": "^7.0.0",
     "style-loader": "^3.3.1",
     "webpack": "^5.73.0",
     "webpack-cli": "^4.10.0",

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios"
 import "../styles/css/geo.min.css";
+import Switch from "react-switch";
+
 
 function Geo(props) {
 
@@ -72,6 +74,13 @@ function Geo(props) {
         });
     }
 
+    let [checked, setChecked] = useState(true)
+
+    const handleChange = checked => {
+        console.log(5555555555)
+        setChecked(checked)
+    }
+
     return (
         <div className="geo">
             <div className="location">
@@ -80,6 +89,10 @@ function Geo(props) {
                 <p className="dateline">{dateline}</p>
             </div>
             <div className="search_form" >
+                <div className="dark_mode">
+                    <Switch onChange={handleChange} checked={checked} onColor={'#790653'} />
+                    <div className="dark_title">DARK MODE</div>
+                </div>
                 <input onChange={searchCity} placeholder="Enter your location"></input>
             </div>
         </div>
