@@ -15,17 +15,14 @@ function Geo(props) {
         let timeline = date.substring(0, to - 4);
         setDateline(timeline)
     }
-    useEffect(() => {
-        let intervalId = setInterval(setDateTime, 30000)
-        return (() => {clearInterval(intervalId)})
-    }, [])
-
 
     const currentPosition = () => {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function (position) {
-                let latitude = position.coords.latitude;
-                let longitude = position.coords.longitude;
+
+        navigator.permissions.query({ name: 'geolocation' }).then(function (permissionStatus) {
+            console.log(permissionStatus.state)
+            if (permissionStatus.state == 'denied' || permissionStatus.state == 'prompt') {
+                let latitude = '51.5073219'
+                let longitude = '-0.1276474'
                 props.setLatitude(latitude)
                 props.setLongitude(longitude)
                 let url = `http://api.openweathermap.org/geo/1.0/reverse?limit=1&appid=${props.apiToken}&lat=${latitude}&lon=${longitude}`
@@ -34,12 +31,37 @@ function Geo(props) {
                     setCountry(countries.resolveName(response.data[0]['country']))
                     setDateTime()
                 });
+            }
+        })
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                let latitude = position.coords.latitude;
+                let longitude = position.coords.longitude;
+                props.setLatitude(latitude)
+                props.setLongitude(longitude)
             })
-        } 
+        }
     }
-    useEffect(() => currentPosition(), [])
 
-    
+    const positionCity = () => {
+        if (props.latitude && props.longitude) {
+            let url = `http://api.openweathermap.org/geo/1.0/reverse?limit=1&appid=${props.apiToken}&lat=${props.latitude}&lon=${props.longitude}`
+            axios.get(url).then(response => {
+                setCity(response.data[0]['name'])
+                setCountry(countries.resolveName(response.data[0]['country']))
+                setDateTime()
+            });
+        }
+    }
+
+    useEffect(() => currentPosition(), [])
+    useEffect(() => positionCity(), [props.latitude, props.longitude])
+    useEffect(() => {
+        let intervalId = setInterval(setDateTime, 30000)
+        return (() => { clearInterval(intervalId) })
+    }, [])
+
+
     const searchCity = e => {
         e.preventDefault();
         let targetCity = e.target.value
@@ -47,9 +69,6 @@ function Geo(props) {
         axios.get(url).then(response => {
             props.setLatitude(response.data[0]['lat'])
             props.setLongitude(response.data[0]['lon'])
-            setCity(response.data[0]['name'])
-            setCountry(countries.resolveName(response.data[0]['country']))
-            setDateTime()
         });
     }
 

@@ -12,8 +12,8 @@ import backgroundPoster from "../img/neon.png";
 
 function Main() {
 
-    const apiToken = 'ab175a054c6d3bf1f1ae8fb08204d3ff'
-    // const apiToken = '44ec7f65d72da5c7ef0b4a57c7087894'
+    // const apiToken = 'ab175a054c6d3bf1f1ae8fb08204d3ff'
+    const apiToken = '44ec7f65d72da5c7ef0b4a57c7087894'
     // const apiToken = '257535a37eaa7f5c0f96a570ca534f58'
 
     let [latitude, setLatitude] = useState(null)
