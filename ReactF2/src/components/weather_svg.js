@@ -52,10 +52,9 @@ function WeatherSvg(props) {
         '701': mist, '711': smoke, '721': haze, '731': dustWind, '741': fog, '751': dust, '761': dustWind, '762': smoke, '771': wind, '781': tornado,
         '800': clearNight, '801': partlyCloudyNight, '802': overcastNight, '803': cloudy, '804': cloudy,
     }
-    let forecastTime = String(props.forecastTime)
+    let forecastTime = props.hour
     let icon_svg = iconStoreDay[props.iconId]
-
-    if (forecastTime > 6 && forecastTime < 19) {
+    if ((forecastTime) > 6 && forecastTime < 19) {
         icon_svg = iconStoreDay[props.iconId]
     } else {
         icon_svg = iconStoreNight[props.iconId]

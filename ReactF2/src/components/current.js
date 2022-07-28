@@ -6,6 +6,7 @@ import WeatherSvg from "./weather_svg"
 
 
 function Current(props) {
+
     let [temperature, setTemperature] = useState(null)
     let [feelsLike, setFeelsLike] = useState(null)
     let [sky, setSky] = useState(null)
@@ -16,13 +17,14 @@ function Current(props) {
     let [dew_point, setDewPoint] = useState(null)
     let [uvi, setUvi] = useState(null)
     let [iconId, setIconId] = useState(null)
-    let [forecastTime, setForecastTime] = useState(13)
+    let [hour, setForecastTime] = useState(null)
 
     useEffect(
         () => {
             if (props.latitude || props.longitude) {
                 let url = `https://api.openweathermap.org/data/2.5/onecall?lat=${props.latitude}&lon=${props.longitude}&appid=${props.apiToken}&units=metric&exclude=minutely`
                 axios.get(url).then(response => {
+                    props.setWeatherForecast(response.data)
                     let temp = String(response.data['current']['temp'])
                     setTemperature(temp.substring(0, 4))
                     setFeelsLike(response.data['current']['feels_like'])
@@ -35,8 +37,9 @@ function Current(props) {
                     setUvi(response.data['current']['uvi'])
                     setIconId(response.data['current']['weather'][0]['id'])
                     let unix_timestamp = response.data['current']['dt']
-                    var date = new Date(unix_timestamp * 1000);
-                    setForecastTime(date.getHours());
+                    let forecastTime = new Date(unix_timestamp * 1000);
+                    hour = forecastTime.getHours()
+                    setForecastTime(hour);
                 });
             }
         },
@@ -47,7 +50,7 @@ function Current(props) {
         <div className="current_weather">
             <div className="left_block">
                 <div className="weather_svg">
-                    <WeatherSvg {...{ iconId, forecastTime} } />
+                    <WeatherSvg {...{ iconId, hour} } />
                 </div>
                 <div className="temperature">
                     <p className="temp">{temperature}°C</p>
