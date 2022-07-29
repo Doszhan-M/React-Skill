@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios"
 import "../styles/css/geo.min.css";
 import Switch from "react-switch";
+import DarkMode from '../img/svg/clear-night.svg';
+import DayMode from '../img/svg/clear-day.svg';
+import backgroundVideo from "../img/lights.mp4";
 
 
 function Geo(props) {
@@ -76,9 +79,11 @@ function Geo(props) {
 
     let [checked, setChecked] = useState(true)
 
-    const handleChange = checked => {
-        console.log(5555555555)
+    const themeChange = checked => {
         setChecked(checked)
+        const img = document.getElementsByClassName("preview__video");
+        img.src = backgroundVideo
+        console.log(img)
     }
 
     return (
@@ -90,8 +95,10 @@ function Geo(props) {
             </div>
             <div className="search_form" >
                 <div className="dark_mode">
-                    <Switch onChange={handleChange} checked={checked} onColor={'#790653'} />
-                    <div className="dark_title">DARK MODE</div>
+                    <Switch onChange={themeChange} checked={checked} onColor={'#790653'}
+                        checkedIcon={<img className="night" src={DarkMode} alt="icon_svg" />} 
+                        uncheckedIcon={<img className="day" src={DayMode} alt="icon_svg" />} 
+                        handleDiameter={0.5}/>
                 </div>
                 <input onChange={searchCity} placeholder="Enter your location"></input>
             </div>

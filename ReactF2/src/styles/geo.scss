@@ -52,9 +52,19 @@
             }
 
             .dark_title {
-                font-size: 12px;
+                font-size: 10px;
+                font-weight: 800;
+                font-family: Barlow, sans-serif;
+            }
+
+            .night {
+                width: 28px;
+            }
+            .day {
+                width: 28px;
             }
         }
+
         input {
             border: 0;
             background-color: transparent;
@@ -81,4 +91,3 @@
     }
 
 }
-

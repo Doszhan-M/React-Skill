@@ -8,6 +8,7 @@ import Daily from "./daily"
 
 import backgroundVideo from "../img/neon.mp4";
 import backgroundPoster from "../img/neon.png";
+import backgroundVideo2 from "../img/lights.mp4";
 
 
 function Main() {
@@ -20,6 +21,7 @@ function Main() {
     let [longitude, setLongitude] = useState(null)
     let [weatherForecast, setWeatherForecast] = useState(null)
     let [currentIndex, setCurrentIndex] = useState(0)
+    let [themeBackground, setThemeBackground] = useState(backgroundVideo2)
 
     return (
         <main>
@@ -27,7 +29,7 @@ function Main() {
                 <source type="video/mp4" src={backgroundVideo} />
             </video>
             <div className="box">
-                <Geo {...{ apiToken, latitude, setLatitude, longitude, setLongitude }} />
+                <Geo {...{ apiToken, latitude, setLatitude, longitude, setLongitude, setThemeBackground, backgroundVideo2 }} />
                 <Current {...{ apiToken, latitude, longitude, setWeatherForecast, currentIndex }} />
                 <Hourly {...{ weatherForecast, setCurrentIndex }}/>
                 <Daily {...{ weatherForecast }}/>
