@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios"
 import "../styles/css/geo.min.css";
-import Switch from "react-switch";
-import DarkMode from '../img/svg/clear-night.svg';
-import DayMode from '../img/svg/clear-day.svg';
-import backgroundVideo from "../img/lights.mp4";
+
+import Theme from "./theme"
 
 
 function Geo(props) {
@@ -22,9 +20,7 @@ function Geo(props) {
     }
 
     const currentPosition = () => {
-
         navigator.permissions.query({ name: 'geolocation' }).then(function (permissionStatus) {
-            console.log(permissionStatus.state)
             if (permissionStatus.state == 'denied' || permissionStatus.state == 'prompt') {
                 let latitude = '51.5073219'
                 let longitude = '-0.1276474'
@@ -61,11 +57,13 @@ function Geo(props) {
 
     useEffect(() => currentPosition(), [])
     useEffect(() => positionCity(), [props.latitude, props.longitude])
+    useEffect(() => { setTimeout(() => { setDateTime() }, 3000) }, [])
+    useEffect(() => { setDateline(props.indexTime) }, [props.indexTime],)
     useEffect(() => {
-        let intervalId = setInterval(setDateTime, 30000)
-        return (() => { clearInterval(intervalId) })
+        if (dateline == '------') {
+            setInterval(() => { setDateTime() }, 30000);
+        }
     }, [])
-
 
     const searchCity = e => {
         e.preventDefault();
@@ -77,15 +75,6 @@ function Geo(props) {
         });
     }
 
-    let [checked, setChecked] = useState(true)
-
-    const themeChange = checked => {
-        setChecked(checked)
-        const img = document.getElementsByClassName("preview__video");
-        img.src = backgroundVideo
-        console.log(img)
-    }
-
     return (
         <div className="geo">
             <div className="location">
@@ -94,12 +83,7 @@ function Geo(props) {
                 <p className="dateline">{dateline}</p>
             </div>
             <div className="search_form" >
-                <div className="dark_mode">
-                    <Switch onChange={themeChange} checked={checked} onColor={'#790653'}
-                        checkedIcon={<img className="night" src={DarkMode} alt="icon_svg" />} 
-                        uncheckedIcon={<img className="day" src={DayMode} alt="icon_svg" />} 
-                        handleDiameter={0.5}/>
-                </div>
+                <Theme />
                 <input onChange={searchCity} placeholder="Enter your location"></input>
             </div>
         </div>

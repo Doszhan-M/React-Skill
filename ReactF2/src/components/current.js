@@ -18,32 +18,36 @@ function Current(props) {
     let [dew_point, setDewPoint] = useState(null)
     let [uvi, setUvi] = useState(null)
     let [iconId, setIconId] = useState(null)
-    let [hour, setForecastTime] = useState(null)
+    let [hour, setHour] = useState(null)
 
 
     function collectData(response, index) {
         if (response) {
-
             setForecastData(response)
             props.setWeatherForecast(response.data)
             let temp = String(response.data.hourly[index]['temp'])
             setTemperature(temp.substring(0, 4))
             setFeelsLike(response.data.hourly[index]['feels_like'])
             setSky(response.data.hourly[index]['weather'][0]['description'])
-            setRain(response.data.hourly[index]['pop'] * 100)
+            setRain((response.data.hourly[index]['pop'] * 100).toFixed(2))
             setWindSpeed(response.data.hourly[index]['wind_speed'])
             setWindDeg(response.data.hourly[index]['wind_deg'])
             setPressure(response.data.hourly[index]['pressure'])
             setDewPoint(response.data.hourly[index]['dew_point'])
             setUvi(response.data.hourly[index]['uvi'])
             setIconId(response.data.hourly[index]['weather'][0]['id'])
+
             let unix_timestamp = response.data.hourly[index]['dt']
             let forecastTime = new Date(unix_timestamp * 1000);
             hour = forecastTime.getHours()
-            setForecastTime(hour);
+            setHour(hour);
+
+            let date = forecastTime.toString()
+            let to = date.search('GMT');
+            let timeline = date.substring(0, to - 4);   
+            props.setIndexTime(timeline)
         }
     }
-
 
     useEffect(
         () => {
@@ -51,7 +55,6 @@ function Current(props) {
                 let url = `https://api.openweathermap.org/data/2.5/onecall?lat=${props.latitude}&lon=${props.longitude}&appid=${props.apiToken}&units=metric&exclude=minutely`
                 axios.get(url).then(response => {
                     collectData(response, props.currentIndex)
-
                 });
             }
         },

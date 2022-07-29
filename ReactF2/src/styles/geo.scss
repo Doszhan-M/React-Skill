@@ -38,32 +38,7 @@
         justify-content: flex-end;
         border-bottom: 1px solid #f5f5f5;
 
-        .dark_mode {
-            align-self: flex-end;
-            margin-bottom: 30px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
 
-            .react-switch-bg {
-                width: 50px !important;
-                height: 50px;
-            }
-
-            .dark_title {
-                font-size: 10px;
-                font-weight: 800;
-                font-family: Barlow, sans-serif;
-            }
-
-            .night {
-                width: 28px;
-            }
-            .day {
-                width: 28px;
-            }
-        }
 
         input {
             border: 0;

@@ -1,0 +1,22 @@
+.dark_mode {
+    align-self: flex-end;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+
+    .react-switch-bg {
+        width: 50px !important;
+        height: 50px;
+        margin-right: 10px !important;
+    }
+
+    .night {
+        width: 28px;
+    }
+    .day {
+        width: 28px;
+        
+    }
+}
