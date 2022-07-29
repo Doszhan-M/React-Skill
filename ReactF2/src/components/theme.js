@@ -10,7 +10,7 @@ import backgroundVideoDAy from "../img/lights.mp4";
 
 
 
-function Theme() {
+function Theme(props) {
     let [checked, setChecked] = useState(true)
     let [themeBackground, setThemeBackground] = useState(backgroundVideoDark)
 
@@ -18,8 +18,10 @@ function Theme() {
         setChecked(checked)
         if (themeBackground == backgroundVideoDark) {
             setThemeBackground(backgroundVideoDAy)
+            props.setDark(false)
         } else {
             setThemeBackground(backgroundVideoDark)
+            props.setDark(true)
         }
     }
     return (

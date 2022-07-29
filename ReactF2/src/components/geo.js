@@ -83,7 +83,7 @@ function Geo(props) {
                 <p className="dateline">{dateline}</p>
             </div>
             <div className="search_form" >
-                <Theme />
+                <Theme setDark={props.setDark}/>
                 <input onChange={searchCity} placeholder="Enter your location"></input>
             </div>
         </div>

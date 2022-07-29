@@ -22,9 +22,10 @@ function Hour(props) {
     }
 
     return (
-        <div className="hourly_item" data-index={index} onClick={props.onClick}>
+        <div className="hourly_item" onClick={props.onClick}  data-index={index} 
+        style={props.isDark ? {} : {background: "rgb(55, 103, 145)"}}>
             <p className="hour">{hour}:00</p>
-            <WeatherSvg {...{ iconId, hour} }/>
+            <WeatherSvg {...{ iconId, hour }} />
             <p className="temp">{temp}°C</p>
         </div>
     )

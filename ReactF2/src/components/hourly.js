@@ -30,13 +30,13 @@ function Hourly(props) {
             props.setCurrentIndex(index)
         }
     }
-
+    let isDark = props.isDark 
     return (
         <div className="hourly">
             <div className="hourly_title">Hourly</div>
             <div className="hourly_items_line">
                 <ScrollContainer className="container flex_container" ref={container}>
-                    {hourly.map((hour, index) => <Hour key={hour.dt} {...{ hour, index, onClick }} />)}
+                    {hourly.map((hour, index) => <Hour key={hour.dt} {...{ hour, index, onClick, isDark}} />)}
                 </ScrollContainer>
             </div>
         </div>

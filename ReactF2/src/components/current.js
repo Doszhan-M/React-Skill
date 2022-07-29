@@ -67,7 +67,6 @@ function Current(props) {
         },
         [props.currentIndex],
     );
-
     return (
         <div className="current_weather">
             <div className="left_block">
@@ -82,7 +81,7 @@ function Current(props) {
             </div>
             <div className="right_block">
                 <div className="specification">
-                    <div className="spec_card">
+                    <div className="spec_card" style={props.isDark ? {} : {background: "rgb(55, 103, 145)"}}>
                         <div className="card_left">
                             <p className="spec_key"><span>Rain</span><span>{rain} %</span></p>
                             <p className="spec_key"><span>Wind speed</span><span>{wind_speed} m/s</span></p>

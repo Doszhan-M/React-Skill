@@ -15,6 +15,12 @@ main {
     height: 100vh;
     padding: 65px 30px;
 
+    @media screen and (max-width: 812px) {
+        & {
+            padding: 37px 3px;
+        }
+    }
+
     .box {
         display: flex;
         flex-direction: column;
@@ -41,6 +47,12 @@ main {
         width: 100vw;
         height: 100vh;
         z-index: -1;
-        transform: scaleY(1.1) scaleX(1.05)
+        transform: scaleY(1.1) scaleX(1.05);
+
+        @media screen and (max-width: 812px) {
+            & {
+                transform: scaleY(1.13) scaleX(1.06);
+            }
+        }
     }
 }
