@@ -1,2 +1,2 @@
-# JS-React F1 
+# JS-React F2 
 ## Weather Forecast
