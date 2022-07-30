@@ -1,0 +1,3 @@
+[submodule "ReactF2/weather_forecast"]
+	path = ReactF2/weather_forecast
+	url = git@github.com:Doszhan-M/weather_forecast.git

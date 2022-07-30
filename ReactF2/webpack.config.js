@@ -6,7 +6,8 @@ module.exports = {
     // mode: "development",
     entry: "./src/index.js",
     output: {
-        path: path.join(__dirname, "/dist"),
+        path: path.join(__dirname, "/weather_forecast"),
+        // path: path.join(__dirname, "/dist"),
         filename: "bundle.js"
     },
     module: {

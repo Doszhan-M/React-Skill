@@ -6,4 +6,4 @@ https://api.openweathermap.org/geo/1.0/direct?limit=1&appid=ab175a054c6d3bf1f1ae
 
 https://api.openweathermap.org/geo/1.0/reverse?limit=1&appid=ab175a054c6d3bf1f1ae8fb08204d3ff&lat=43.25&lon=76.95
 
-git submodule add git@bitbucket.org:smytteam/cargo.git cargo_app/cargo
+git submodule add git@github.com:Doszhan-M/weather_forecast.git
