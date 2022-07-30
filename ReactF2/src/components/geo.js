@@ -26,7 +26,7 @@ function Geo(props) {
                 let longitude = '76.94'
                 props.setLatitude(latitude)
                 props.setLongitude(longitude)
-                let url = `http://api.openweathermap.org/geo/1.0/reverse?limit=1&appid=${props.apiToken}&lat=${latitude}&lon=${longitude}`
+                let url = `https://api.openweathermap.org/geo/1.0/reverse?limit=1&appid=${props.apiToken}&lat=${latitude}&lon=${longitude}`
                 axios.get(url).then(response => {
                     setCity(response.data[0]['name'])
                     setCountry(countries.resolveName(response.data[0]['country']))
@@ -46,7 +46,7 @@ function Geo(props) {
 
     const positionCity = () => {
         if (props.latitude && props.longitude) {
-            let url = `http://api.openweathermap.org/geo/1.0/reverse?limit=1&appid=${props.apiToken}&lat=${props.latitude}&lon=${props.longitude}`
+            let url = `https://api.openweathermap.org/geo/1.0/reverse?limit=1&appid=${props.apiToken}&lat=${props.latitude}&lon=${props.longitude}`
             axios.get(url).then(response => {
                 setCity(response.data[0]['name'])
                 setCountry(countries.resolveName(response.data[0]['country']))
