@@ -5,10 +5,23 @@
     height: 130px;
     margin: 0.5%;
 
+    @media screen and (max-width: 812px) {
+        & {
+            flex-direction: column;
+            height: 100%;
+        }
+    }
+
     .left_block {
         display: flex;
         width: 50%;
         height: 100%;
+
+        @media screen and (max-width: 812px) {
+            & {
+                width: 100%;
+            }
+        }
 
         .weather_svg {
             display: flex;
@@ -16,6 +29,12 @@
             height: 100%;
             justify-content: center;
             transform: scale(1.4);
+
+            @media screen and (max-width: 812px) {
+                & {
+                    transform: scale(1.2);
+                }
+            }
         }
 
         .temperature {
@@ -41,6 +60,13 @@
                 font-weight: 500;
                 margin: 0;
                 height: 25%;
+
+                @media screen and (max-width: 812px) {
+                    & {
+                        height: 15%;
+
+                    }
+                }
             }
 
             .sky {
@@ -58,6 +84,12 @@
         width: 50%;
         height: 100%;
 
+        @media screen and (max-width: 812px) {
+            & {
+                width: 100%;
+
+            }
+        }
     }
 
     .specification {
@@ -65,6 +97,12 @@
         width: 100%;
         height: 100%;
         justify-content: flex-end;
+
+        @media screen and (max-width: 812px) {
+            & {
+                justify-content: center;
+            }
+        }
 
         .spec_card {
             padding: 1% 5%;
@@ -78,6 +116,14 @@
             font-family: Frank Ruhl Libre, serif;
             font-size: 18px;
             font-weight: 550;
+
+            @media screen and (max-width: 812px) {
+                & {
+                    width: 100%;
+                    font-size: 16px;
+                    padding: 2%;
+                }
+            }
 
             .card_left {
                 display: flex;
@@ -100,6 +146,13 @@
                 width: 100%;
                 height: 33.3%;
                 justify-content: space-between;
+
+                @media screen and (max-width: 812px) {
+                    & {
+                        margin-top: 5px;
+                        margin-bottom: 5px;
+                    }
+                }
 
                 & :nth-child(1) {
                     color: rgb(135, 175, 162);

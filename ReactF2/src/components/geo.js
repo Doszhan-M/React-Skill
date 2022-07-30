@@ -22,8 +22,8 @@ function Geo(props) {
     const currentPosition = () => {
         navigator.permissions.query({ name: 'geolocation' }).then(function (permissionStatus) {
             if (permissionStatus.state == 'denied' || permissionStatus.state == 'prompt') {
-                let latitude = '51.5073219'
-                let longitude = '-0.1276474'
+                let latitude = '43.23'
+                let longitude = '76.94'
                 props.setLatitude(latitude)
                 props.setLongitude(longitude)
                 let url = `http://api.openweathermap.org/geo/1.0/reverse?limit=1&appid=${props.apiToken}&lat=${latitude}&lon=${longitude}`

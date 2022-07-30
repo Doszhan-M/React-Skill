@@ -7,6 +7,12 @@
     font-weight: 600;
     border-radius: 15px !important;
     max-height: 60px;
+
+    @media screen and (max-width: 812px) {
+        & {
+            max-height: 80px;
+        }
+    }
 }
 
 .accordion-item {
@@ -35,6 +41,13 @@
             font-size: 18px;
             font-weight: 550;
 
+            @media screen and (max-width: 812px) {
+                & {
+                    font-size: 14px;
+
+                }
+            }
+
             .card_left {
                 display: flex;
                 width: 50%;
@@ -57,6 +70,11 @@
                 height: 33.3%;
                 justify-content: space-between;
 
+                @media screen and (max-width: 812px) {
+                    & {
+                        margin-bottom: 15px;
+                    }
+                }
                 & :nth-child(1) {
                     color: rgb(135, 175, 162);
                 }
@@ -72,6 +90,12 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+
+    @media screen and (max-width: 812px) {
+        & {
+            flex-direction: column;
+        }
+    }
 
     .title_left {
         display: flex;
@@ -94,10 +118,17 @@
         font-size: 18px;
         font-weight: 500;
 
+        @media screen and (max-width: 812px) {
+            & {
+                margin-bottom: 10px;
+            }
+        }
+
         i {
             font-size: 16px;
             font-weight: 700;
             margin-right: 8px;
+
         }
     }
 }

@@ -21,7 +21,7 @@ function Daily(props) {
             if (props.isDark) {
                 elem.style.background = ''
             } else {
-                elem.style.background = 'rgb(55, 103, 145)'
+                elem.style.background = 'linear-gradient(45deg, #9890e3, #b1f4cf)'
             }
         });
     }

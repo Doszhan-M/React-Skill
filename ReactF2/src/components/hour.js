@@ -23,7 +23,7 @@ function Hour(props) {
 
     return (
         <div className="hourly_item" onClick={props.onClick}  data-index={index} 
-        style={props.isDark ? {} : {background: "rgb(55, 103, 145)"}}>
+        style={props.isDark ? {} : {background: "linear-gradient(45deg, #9890e3, #b1f4cf)"}}>
             <p className="hour">{hour}:00</p>
             <WeatherSvg {...{ iconId, hour }} />
             <p className="temp">{temp}°C</p>
