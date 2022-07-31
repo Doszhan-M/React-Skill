@@ -23,15 +23,15 @@ function Day(props) {
     let night_temp = props.day.temp.night
 
 
-    let rain = props.day.pop * 100
-    let humidity = props.day.humidity
-    let wind_speed = props.day.wind_speed
+    let rain = (props.day.pop * 100).toFixed(0)
+    let humidity = (props.day.humidity).toFixed(0)
+    let wind_speed = (props.day.wind_speed).toFixed(0)
     let sunrise = props.day.sunrise
     let sunriseHour = new Date(sunrise * 1000).getHours();
     let sunriseMinute = new Date(sunrise * 1000).getMinutes();
     let pressure = props.day.pressure
-    let dew_point = props.day.dew_point
-    let uvi = props.day.uvi
+    let dew_point = (props.day.dew_point.toFixed(1))
+    let uvi = (props.day.uvi.toFixed(1))
     let sunset = props.day.sunset
     let sunsetHour = new Date(sunset * 1000).getHours();
     let sunsetMinute = new Date(sunset * 1000).getMinutes();
