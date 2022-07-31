@@ -56,3 +56,36 @@ main {
         }
     }
 }
+
+
+// preloader______________________
+#p_prldr {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: black;
+    z-index: 30;
+}
+
+.contpre small {
+    font-size: 30px;
+}
+
+.contpre {}
+
+#p_prldr .svg_anm {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 241px;
+    height: 241px;
+    background-size: 241px;
+    color: rgb(19, 190, 62);
+}
+
+// _________________________________________________________________
