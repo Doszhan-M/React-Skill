@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import $ from 'jquery';
-
 import "../styles/css/theme.min.css";
 
 import Switch from "react-switch";
@@ -10,8 +8,7 @@ import DayMode from '../img/svg/clear-day.svg';
 import backgroundVideoDark from "../img/neon.mp4";
 import backgroundPoster from "../img/neon.png";
 import backgroundVideoDAy from "../img/lights.mp4";
-import preloader_icon from '../img/preloader.svg';
-
+import { Sugar } from 'react-preloaders2';
 
 
 function Theme(props) {
@@ -28,25 +25,8 @@ function Theme(props) {
             props.setDark(true)
         }
     }
-
-    $(window).on('load', function () {
-        var $preloader = $('#p_prldr'),
-            $svg_anm = $preloader.find('.svg_anm');
-        $svg_anm.fadeOut();
-        $preloader.delay(500).fadeOut('slow');
-    });
-
-    const myStyle = {
-        background: `url(${preloader_icon}) center center no-repeat`
-    };
-
     return (
         <div >
-            <div id="p_prldr">
-                <div className="contpre">
-                    <span className="svg_anm" style={myStyle}></span>
-                </div>
-            </div>
             <div className="dark_mode">
                 <Switch onChange={themeChange} checked={checked} onColor={'#790653'}
                     checkedIcon={<img className="night" src={DarkMode} alt="icon_svg" />}
@@ -57,10 +37,9 @@ function Theme(props) {
                 <video key={themeBackground} autoPlay muted loop preload="auto" poster={backgroundPoster} className="preview__video">
                     <source type="video/mp4" src={themeBackground} />
                 </video>
-
             </div>
+            <Sugar background="linear-gradient(90deg, rgba(28,26,26,1) 0%, rgba(143,56,53,1) 50%, rgba(17,66,186,1) 100%)"/>
         </div>
     )
 }
-
 export default Theme;
