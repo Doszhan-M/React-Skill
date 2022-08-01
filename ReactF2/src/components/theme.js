@@ -33,12 +33,12 @@ function Theme(props) {
                     uncheckedIcon={<img className="day" src={DayMode} alt="icon_svg" />}
                     handleDiameter={0.5}
                 />
-
+                
                 <video key={themeBackground} autoPlay muted loop preload="auto" poster={backgroundPoster} className="preview__video">
                     <source type="video/mp4" src={themeBackground} />
                 </video>
             </div>
-            <Sugar background="linear-gradient(90deg, rgba(28,26,26,1) 0%, rgba(143,56,53,1) 50%, rgba(17,66,186,1) 100%)"/>
+            <Sugar customLoading={props.preloaderStatus} background="linear-gradient(90deg, rgba(28,26,26,1) 0%, rgba(143,56,53,1) 50%, rgba(17,66,186,1) 100%)"/>
         </div>
     )
 }
