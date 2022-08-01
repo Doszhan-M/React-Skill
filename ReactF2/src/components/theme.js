@@ -6,19 +6,22 @@ import DarkMode from '../img/svg/clear-night.svg';
 import DayMode from '../img/svg/clear-day.svg';
 
 import backgroundVideoDark from "../img/neon.mp4";
-import backgroundPoster from "../img/neon.png";
-import backgroundVideoDAy from "../img/lights.mp4";
+import backgroundPosterNight from "../img/neon.png";
+import backgroundPosterDay from "../img/blue.jpg";
+import backgroundVideoDAy from "../img/blue.mp4";
 import { Sugar } from 'react-preloaders2';
 
 
 function Theme(props) {
     let [checked, setChecked] = useState(true)
     let [themeBackground, setThemeBackground] = useState(backgroundVideoDark)
+    let [poster, setPoster] = useState(backgroundPosterNight)
 
     const themeChange = checked => {
         setChecked(checked)
         if (themeBackground == backgroundVideoDark) {
             setThemeBackground(backgroundVideoDAy)
+            setPoster(backgroundPosterDay)
             props.setDark(false)
         } else {
             setThemeBackground(backgroundVideoDark)
@@ -34,7 +37,7 @@ function Theme(props) {
                     handleDiameter={0.5}
                 />
                 
-                <video key={themeBackground} autoPlay muted loop preload="auto" poster={backgroundPoster} className="preview__video">
+                <video key={themeBackground} autoPlay muted loop preload="auto" poster={poster} className="preview__video">
                     <source type="video/mp4" src={themeBackground} />
                 </video>
             </div>
