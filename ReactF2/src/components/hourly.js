@@ -20,7 +20,7 @@ function Hourly(props) {
     const container = useRef(null);
     useEffect(() => {
         container.current.getElement().scrollTo(0, Math.random() * 10000);
-    }, []);
+    });
 
 
     const onClick = event => {
