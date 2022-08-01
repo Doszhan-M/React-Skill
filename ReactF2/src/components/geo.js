@@ -40,8 +40,6 @@ function Geo(props) {
     }
 
     function showError(error) {
-        console.log(error)
-
         switch (error.code) {
             case error.PERMISSION_DENIED:
                 console.log("User denied the request for Geolocation.")
