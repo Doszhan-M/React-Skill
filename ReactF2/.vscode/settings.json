@@ -1,4 +1,4 @@
-{ 
+{
   // - - - Настройки liveSassCompile - - - - - - - - 
   "liveSassCompile.settings.formats": [
     {
@@ -7,9 +7,12 @@
       "savePath": "/src/styles/css"
     },
   ],
+  "liveSassCompile.settings.autoprefix": [
+    "> 1%",
+    "last 2 versions",
+  ],
 
   "editor.snippetSuggestions": "top",
-  
   // - - - Настройки cSpell - - - - - - - - - - - - -
   "cSpell.language": "en,ru",
   "cSpell.ignoreWords": [
