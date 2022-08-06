@@ -1,0 +1,166 @@
+.current_weather {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    height: 130px;
+    margin: 0.5%;
+
+    @media screen and (max-width: 812px) {
+        & {
+            flex-direction: column;
+            height: 100%;
+        }
+    }
+
+    .left_block {
+        display: flex;
+        width: 50%;
+        height: 100%;
+
+        @media screen and (max-width: 812px) {
+            & {
+                width: 100%;
+            }
+        }
+
+        .weather_svg {
+            display: flex;
+            width: 50%;
+            height: 100%;
+            justify-content: center;
+            transform: scale(1.4);
+
+            @media screen and (max-width: 812px) {
+                & {
+                    transform: scale(1.2);
+                }
+            }
+        }
+
+        .temperature {
+            color: aliceblue;
+            display: flex;
+            width: 50%;
+            height: 100%;
+            flex-direction: column;
+            align-items: flex-end;
+
+            .temp {
+                font-family: Frank Ruhl Libre, serif;
+                font-size: 48px;
+                font-weight: 900;
+                margin: 0;
+                height: 50%;
+
+            }
+
+            .feel_like {
+                font-family: Frank Ruhl Libre, serif;
+                font-size: 18px;
+                font-weight: 500;
+                margin: 0;
+                height: 25%;
+
+                @media screen and (max-width: 812px) {
+                    & {
+                        height: 15%;
+
+                    }
+                }
+            }
+
+            .sky {
+                font-family: Frank Ruhl Libre, serif;
+                font-size: 18px;
+                font-weight: 500;
+                margin: 0;
+                height: 25%;
+            }
+        }
+    }
+
+    .right_block {
+        display: flex;
+        width: 50%;
+        height: 100%;
+
+        @media screen and (max-width: 812px) {
+            & {
+                width: 100%;
+
+            }
+        }
+    }
+
+    .specification {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: flex-end;
+
+        @media screen and (max-width: 812px) {
+            & {
+                justify-content: center;
+            }
+        }
+
+        .spec_card {
+            padding: 1% 5%;
+            display: flex;
+            justify-content: space-between;
+            width: 90%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(69, 1, 2, 1) 0%, rgba(84, 2, 3, 1) 40%, rgba(134, 15, 237, 1) 100%);
+            border-radius: 15px;
+            color: aliceblue;
+            font-family: Frank Ruhl Libre, serif;
+            font-size: 18px;
+            font-weight: 550;
+
+            @media screen and (max-width: 812px) {
+                & {
+                    width: 100%;
+                    font-size: 16px;
+                    padding: 2%;
+                }
+            }
+
+            .card_left {
+                display: flex;
+                width: 50%;
+                height: 100%;
+                flex-direction: column;
+                margin-left: 0%;
+            }
+
+            .card_right {
+                display: flex;
+                width: 50%;
+                height: 100%;
+                flex-direction: column;
+                margin-left: 5%;
+            }
+
+            .spec_key {
+                display: flex;
+                width: 100%;
+                height: 33.3%;
+                justify-content: space-between;
+
+                @media screen and (max-width: 812px) {
+                    & {
+                        margin-top: 5px;
+                        margin-bottom: 5px;
+                    }
+                }
+
+                & :nth-child(1) {
+                    color: rgb(135, 175, 162);
+                }
+
+            }
+
+
+        }
+    }
+}

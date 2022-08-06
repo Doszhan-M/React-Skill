@@ -1,0 +1,91 @@
+html {
+
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    padding: 65px 30px;
+
+    @media screen and (max-width: 812px) {
+        & {
+            padding: 37px 3px;
+        }
+    }
+
+    .box {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        height: auto;
+        overflow: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+        }
+    }
+
+    .preview__video {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: fill;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+        transform: scaleY(1.1) scaleX(1.05);
+
+        @media screen and (max-width: 812px) {
+            & {
+                transform: scaleY(1.14) scaleX(1.15);
+            }
+        }
+    }
+}
+
+
+// preloader______________________
+#p_prldr {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: black;
+    z-index: 30;
+}
+
+.contpre small {
+    font-size: 30px;
+}
+
+.contpre {}
+
+#p_prldr .svg_anm {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 241px;
+    height: 241px;
+    background-size: 241px;
+    color: rgb(19, 190, 62);
+}
+
+// _________________________________________________________________

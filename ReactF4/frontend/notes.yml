@@ -1,0 +1,9 @@
+npm install @babel/core @babel/preset-env @babel/preset-react axios babel-loader bootstrap css-loader html-webpack-plugin react react-bootstrap react-dom style-loader webpack webpack-cli webpack-dev-server
+
+https://api.openweathermap.org/data/2.5/onecall?lat=43.237376&lon=76.8638976&appid=ab175a054c6d3bf1f1ae8fb08204d3ff&units=metric&exclude=minutely
+
+https://api.openweathermap.org/geo/1.0/direct?limit=1&appid=ab175a054c6d3bf1f1ae8fb08204d3ff&q=almaty
+
+https://api.openweathermap.org/geo/1.0/reverse?limit=1&appid=ab175a054c6d3bf1f1ae8fb08204d3ff&lat=43.25&lon=76.95
+
+git submodule add git@github.com:Doszhan-M/weather_forecast.git

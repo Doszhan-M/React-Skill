@@ -1,0 +1,89 @@
+.geo {
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+
+    @media screen and (max-width: 812px) {
+        & {
+            flex-direction: column;
+            align-items: flex-end;
+
+        }
+    }
+
+    .location {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .city {
+            margin: 0 0 -3%;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: 800;
+            color: aliceblue;
+            font-size: 38px;
+            text-transform: uppercase;
+        }
+
+        .country {
+            margin: 0 0;
+            font-family: Barlow, sans-serif;
+            color: aliceblue;
+            font-size: 18px;
+        }
+
+        .dateline {
+            margin: 0 0;
+            font-family: Frank Ruhl Libre, serif;
+            color: aliceblue;
+            font-size: 16px;
+        }
+    }
+
+    .search_form {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        border-bottom: 1px solid #f5f5f5;
+
+        @media screen and (max-width: 812px) {
+            & {
+                margin-bottom: 10px;
+    
+            }
+        }
+
+        input {
+            border: 0;
+            background-color: transparent;
+            text-align: end;
+            color: white;
+            height: 50%;
+            font-family: Barlow, sans-serif;
+            font-size: 20px;
+            transition: all .3s ease-in-out;
+
+            &:focus {
+                outline-style: none;
+                box-shadow: none;
+                border-color: transparent;
+                color: white;
+                font-family: Barlow, sans-serif;
+                transition: all .3s ease-in-out;
+                font-size: 30px;
+
+                @media screen and (max-width: 812px) {
+                    & {
+                        font-size: 25px;
+
+            
+                    }
+                }
+            }
+
+
+        }
+
+    }
+
+}
