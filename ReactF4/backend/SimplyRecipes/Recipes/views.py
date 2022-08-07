@@ -1,13 +1,11 @@
 from rest_framework.generics import (
-    CreateAPIView, ListAPIView, RetrieveAPIView, UpdateAPIView,
+    ListAPIView, RetrieveAPIView,
 )
-from rest_framework.views import APIView
-from rest_framework.response import Response
-from rest_framework.status import HTTP_200_OK, HTTP_201_CREATED
-
 
 from .models import Post, Category
-from .serializers import PostSerializer, CategorySerializer
+from .serializers import (
+    PostSerializer, CategorySerializer
+)
 
 
 class PostDetail(RetrieveAPIView):
@@ -26,7 +24,13 @@ class AllCategories(ListAPIView):
     
     
 class PostCategory(ListAPIView):
-    queryset = Post.objects.all()
+    model = Post
     serializer_class = PostSerializer
     
-    
+    def get_queryset(self):
+        if getattr(self, 'swagger_fake_view', False):
+            return Post.objects.none()
+        category_id = self.kwargs['pk']
+        queryset = self.model.objects.filter(category=category_id)
+        return queryset
+
