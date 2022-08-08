@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import { Link, Outlet } from "react-router-dom"
+import React from "react";
+
 
 
 function Main() {
-
-
     return (
         <main>
-            Hello World!
+
         </main>
-    )
+    );
 }
+
 export default Main;

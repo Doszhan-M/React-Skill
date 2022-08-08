@@ -7,14 +7,16 @@ module.exports = {
     entry: "./src/index.js",
     devServer: {
         hot: true,
-        open: false
+        open: false,
+        historyApiFallback: true,
     },
     resolve: {
         extensions: [".js", ".jsx"]
       },
     output: {
         path: path.join(__dirname, "/dist"),
-        filename: "bundle.js"
+        filename: "bundle.js",
+        publicPath: '/',
     },
     module: {
         rules: [
