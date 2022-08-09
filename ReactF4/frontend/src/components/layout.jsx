@@ -7,6 +7,7 @@ import Categories from "./nav"
 
 
 const Layout = () => {
+
     return (
         <div className="root">
             <Header />

@@ -8,15 +8,17 @@ header {
 
     div {
         width: 50%;
+        height: 100%;
         display: flex;
         justify-content: space-around;
+        align-content: center;
 
         a {
             border: 1px;
             border-radius: 15px;
             background-color: aqua;
-            width: 100px;
-            height: 40px;
+            width: 120px;
+            height: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
