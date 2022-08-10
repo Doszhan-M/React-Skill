@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { Routes, Route, Link } from "react-router-dom"
+import { Routes, Route } from "react-router-dom"
 import "./styles/css/app.min.css";
 
 import { Context } from "./context"
@@ -8,6 +8,7 @@ import HomePage from "./pages/home"
 import AboutPage from "./pages/about"
 import NotFoundPage from "./pages/notfound"
 import CategoryPage from "./pages/category"
+import PostPage from "./pages/post_detail"
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
                     <Route path="about" element={<AboutPage />} />
                     <Route path="*" element={<NotFoundPage />} />
                     <Route path="category/:id" element={<CategoryPage />} />
+                    <Route path="post" element={<PostPage />} />
                 </Route>
             </Routes>
         </Context.Provider>

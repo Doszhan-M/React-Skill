@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom"
+import { Outlet } from "react-router-dom"
 import "../styles/css/layout.min.css";
 
 import Header from "./header"
@@ -12,9 +12,9 @@ const Layout = () => {
         <div className="root">
             <Header />
             <main>
-                <nav>
+                <aside>
                     <Categories/>
-                </nav>
+                </aside>
                 <Outlet />
             </main>
         </div>

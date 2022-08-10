@@ -8,9 +8,12 @@ function PostCard(props) {
     return (
         <div className="post">
             <h2>{props.post.title}</h2>
-            <img src={props.post.image} alt="" />
-            <p>{props.post.description}</p>
-            <p><b>Get the recipe:</b> <NavLink to={`/category/${props.post.id}`}>{props.post.title}</NavLink></p>
+            <img className="post_img" src={props.post.image} alt="" />
+            <div className="desc">{props.post.description}
+            <p className="link">
+                <b>Get the recipe:</b> 
+                <NavLink to={`/post?id=${props.post.id}`}>{props.post.title}</NavLink></p>
+            </div>
         </div>
     )
 }

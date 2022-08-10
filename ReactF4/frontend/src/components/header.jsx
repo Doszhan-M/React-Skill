@@ -10,7 +10,8 @@ function Header() {
         <header>
             <div>
                 <NavLink to="/">Home</NavLink>
-                <NavLink to="/api">Api</NavLink>
+                {/* <NavLink to="/api">Api</NavLink> */}
+                <a href="http://127.0.0.1:8000/swagger/" target="_blank">API</a>
                 <NavLink to="/about">About</NavLink>
             </div>
         </header>

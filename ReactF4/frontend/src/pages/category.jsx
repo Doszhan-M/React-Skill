@@ -1,8 +1,6 @@
-import axios from "axios"
 import React, { useState, useEffect, useContext } from "react";
 import "../styles/css/category.min.css";
-import { NavLink, useParams } from "react-router-dom"
-import { Routes, Route, Link } from "react-router-dom"
+import { useParams } from "react-router-dom"
 
 import { Context } from "../context"
 import PostCard from "../components/post"
@@ -33,7 +31,7 @@ function CategoryPage(props) {
 
     return (
         <div className="category_page">
-            <img src={img} alt="" />
+            <img className="title_img" src={img} alt="" />
             <div className="posts">
                 {posts?.map(post => {
                     return <PostCard key={post.id} post={post} />
