@@ -1,7 +1,4 @@
-# JS-React F2 
-## Weather Forecast
+# JS-React F4
+## Simply Recipes
 
-npm install --legacy-peer-deps
-
-
-https://doszhan-m.github.io/weather_forecast/
+npm install

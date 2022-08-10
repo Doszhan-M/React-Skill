@@ -7,7 +7,7 @@ module.exports = {
     entry: "./src/index.js",
     devServer: {
         hot: true,
-        open: false,
+        open: true,
         historyApiFallback: true,
     },
     resolve: {
@@ -16,7 +16,7 @@ module.exports = {
     output: {
         path: path.join(__dirname, "/dist"),
         filename: "bundle.js",
-        publicPath: '/',
+        // publicPath: '/',
     },
     module: {
         rules: [
