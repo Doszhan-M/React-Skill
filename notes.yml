@@ -1,0 +1,24 @@
+ReactF4 supervisor:
+sudo nano /etc/supervisor/conf.d/backend.conf
+
+[program:backend]
+directory=/home/doszhan_work/github/React-Skill/ReactF4/backend/SimplyRecipes
+command=python3 manage.py runserver 0.0.0.0:4000
+user=doszhan_work
+process_name=%(program_name)s
+numprocs=1
+autostart=true
+autorestart=true
+redirect_stderr=true
+
+sudo nano /etc/supervisor/conf.d/frontend.conf
+
+[program:frontend]
+directory=/home/doszhan_work/github/React-Skill/ReactF4/frontend
+command=npm run dev
+user=doszhan_work
+process_name=%(program_name)s
+numprocs=1
+autostart=true
+autorestart=true
+redirect_stderr=true
